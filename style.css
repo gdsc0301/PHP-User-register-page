@@ -1,0 +1,10 @@
+body{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.vertical.segments {
+  width: 60%;
+  max-width: 800px;
+  min-width: 512px;
+}
