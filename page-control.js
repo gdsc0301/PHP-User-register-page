@@ -24,12 +24,13 @@ $(document).ready(function(){
       'age'        : $("input[name='age']").val()
     };
 
+    this.reset();
     $.ajax({
       url:"registration.php",
       method: "POST",
       data: postData,
       success: function(){
-        console.log(postData['email']);
+
         AppendUserByEmail(postData['email']);
       }
     });
@@ -38,7 +39,6 @@ $(document).ready(function(){
   /*USER EDITING FORM CONTROLL*/
   $(document).on("click", "input[name='edit']", function(e){
     var targetId = $(e.target).attr('id');
-    console.log(e);
     $("div.user-edit-form[id="+targetId+"]").toggleClass("hidden");
   });
 
@@ -51,8 +51,7 @@ $(document).ready(function(){
       success: function(id){
         $("div.ui.card.fluid#" + id).remove();
       }
-    })
-
+    });
   });
 
   /*EACH USER DATA EDITING*/
@@ -96,7 +95,7 @@ $(document).ready(function(){
       data: values,
       success: function(data) {
         var newData = JSON.parse(data);
-        $(e.target).val("");
+        $(e.target).prev().val("");
         $(".ui.card#" + newData.user_id + " div.header").html(newData.first_name + " " + newData.last_name + " - " + newData.age);
       }
     });
@@ -119,7 +118,7 @@ $(document).ready(function(){
       data: values,
       success: function (data) {
         var newData = JSON.parse(data);
-        $(e.target).val("");
+        $(e.target).prev().val("");
         $(".ui.card#" + newData.user_id + " div.header").html(newData.first_name + " " + newData.last_name + " - " + newData.age);
       }
     });
@@ -141,9 +140,8 @@ $(document).ready(function(){
       method:"post",
       data: values,
       success: function (data) {
-        console.log(data);
         var newData = JSON.parse(data);
-        $(e.target).val("");
+        $(e.target).prev().val("");
         $(".ui.card#" + newData.user_id + " div.meta").html(newData.email);
       }
     });
@@ -158,7 +156,6 @@ function AppendUserByEmail(userEmail){
     data: {'type':'get_by_email', 'email': userEmail},
     success: function(data){
       var newData = JSON.parse(data);
-      console.log(newData);
       AppendUsers(newData);
     }
   });

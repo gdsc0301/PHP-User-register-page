@@ -2,6 +2,13 @@
 
 $data = $_POST;
 
+/*UPDATE WITH YOUR DATABASE INFORMATION*/
+$host = "127.0.0.1";
+$user = "root";
+$password = "";
+$table = "user_registration";
+/* END */
+
 switch ($data['type']) {
   case 'get_all':
     GetAllUsers();
@@ -18,12 +25,7 @@ switch ($data['type']) {
 }
 
 function GetAllUsers() {
-  /*UPDATE WITH YOUR DATABASE INFORMATION*/
-  $host = "127.0.0.1";
-  $user = "root";
-  $password = "";
-  $table = "user_registration";
-  /* END */
+  global $host, $user, $password, $table;
 
   $link = new mysqli($host, $user, $password, $table);
 
@@ -56,12 +58,7 @@ function GetAllUsers() {
 
 /* FUNCTIONS */
 function GetProfileByEmail($email) {
-  /*UPDATE WITH YOUR DATABASE INFORMATION*/
-  $host = "127.0.0.1";
-  $user = "root";
-  $password = "";
-  $table = "user_registration";
-  /* END */
+  global $host, $user, $password, $table;
 
   $link = mysqli_connect($host, $user, $password, $table);
   /* check connection */
@@ -82,13 +79,7 @@ function GetProfileByEmail($email) {
 }
 
 function EmailExists($email){
-  /*UPDATE WITH YOUR DATABASE INFORMATION*/
-  $host = "127.0.0.1";
-  $user = "root";
-  $password = "";
-  $table = "user_registration";
-  /* END */
-
+  global $host, $user, $password, $table;
   $link = new mysqli($host, $user, $password, $table);
 
   if ($link->connect_errno) {
