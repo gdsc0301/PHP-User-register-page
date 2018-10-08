@@ -8,3 +8,7 @@ body{
   max-width: 800px;
   min-width: 512px;
 }
+
+.hidden {
+  display: none;
+}

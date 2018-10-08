@@ -42,23 +42,7 @@
     <!-- USERS LIST -->
     <div class="ui raised padded segment user-list">
       <div class="ui cards">
-        <div class="ui raised card">
-          <div class="content">
-            <div class="header">
-              Guilherme Carvalho - 19 anos
-            </div>
-            <div class="meta">
-              gdsc0301@gmail.com
-            </div>
-          </div>
-          <div class="extra-content">
-            <div class="ui two buttons">
-              <input class="ui basic yellow button" name="edit" type="button" value="Editar">
-              <input class="ui basic red button" name="delete" type="button" value="Excluir">
-            </div>
-          </div>
-        </div>
-      </div>
+        <!-- USER CARD ARE INSERTED HERE -->
     </div>
   </div>
   <script src="page-control.js"></script>
