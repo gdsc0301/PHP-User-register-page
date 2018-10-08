@@ -177,20 +177,20 @@ function AppendUsers(data){
       '<div class="ui user-edit-form padded fluid segment hidden" id="'+data.user_id+'">'+
         '<h4 class="ui header dividing"> Edit this profile</h4>'+
         '<div class="ui mini action input">'+
-          '<input type="text" class="first_name" placeholder="Primeiro Nome">'+
-          '<button type="button" class="ui button first_name_submit">OK</button>'+
+          '<input type="text" class="first_name" minlength="3" placeholder="Primeiro Nome">'+
+          '<button type="submit" class="ui button first_name_submit">OK</button>'+
         '</div>'+
         '<div class="ui mini action input">'+
-          '<input type="text" class="last_name" placeholder="Último Nome">'+
-          '<button type="button" class="ui button last_name_submit">OK</button>'+
+          '<input type="text" class="last_name" minlength="3" placeholder="Último Nome">'+
+          '<button type="submit" class="ui button last_name_submit">OK</button>'+
         '</div>'+
         '<div class="ui mini action input">'+
-          '<input type="email" class="email" placeholder="Email" required>'+
-          '<button type="button" class="ui button email_submit">OK</button>'+
+          '<input type="email" class="email" minlength="9" placeholder="Email" required>'+
+          '<button type="submit" class="ui button email_submit">OK</button>'+
         '</div>'+
         '<div class="ui mini action input">'+
           '<input type="number" class="age" placeholder="Idade" required>'+
-          '<button type="button" class="ui button age_submit">OK</button>'+
+          '<button type="submit" class="ui button age_submit">OK</button>'+
         '</div>'+
       '</div>'+
       '<!--END-->'+

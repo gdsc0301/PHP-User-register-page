@@ -19,10 +19,10 @@
         <label>Nome</label>
         <div class="two fields">
           <div class="field">
-            <input type="text" name="first_name" class="name-input" placeholder="Nome" required>
+            <input type="text" name="first_name" minlength="3" class="name-input" placeholder="Nome" required>
           </div>
           <div class="field">
-            <input type="text" name="last_name" class="last_name-input" placeholder="Sobrenome" required>
+            <input type="text" name="last_name" minlength="3" class="last_name-input" placeholder="Sobrenome" required>
           </div>
         </div>
         <label>E-Mail</label>
